@@ -1,9 +1,9 @@
 require 'capybara'
-require 'web_helper'
 require_relative '../app.rb'
-include Capybara::DSL
 
 describe BattleZone do
+  
+  include Capybara::DSL
   Capybara.default_driver = :selenium
 
   feature 'when starting a game' do
@@ -22,13 +22,6 @@ describe BattleZone do
     scenario 'allows a two player game with visual confirmation of names' do
       sign_up_and_play
       expect(page).to have_content('Robert')
-    end
-  end
-
-  feature 'HP' do
-    scenario 'allows player to view opponent HP' do
-      sign_up_and_play
-      expect(page).to have_content('Robert: 100/100HP')
     end
   end
 end
