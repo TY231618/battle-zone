@@ -1,4 +1,5 @@
 require 'capybara'
+require 'web_helper'
 require_relative '../app.rb'
 include Capybara::DSL
 
@@ -12,29 +13,21 @@ describe BattleZone do
     end
   end
 
-  feature 'enter names' do
+  feature 'name entering' do
     scenario 'player enters name and receives visual confirmation of name' do
-      visit "http://localhost:9292/"
-      fill_in(:player1, with: 'Tony')
-      click_button('Enter Battle')
+      one_player_game
       expect(page).to have_content('Tony')
     end
 
     scenario 'allows a two player game with visual confirmation of names' do
-      visit "http://localhost:9292/"
-      fill_in(:player1, with: 'Tony')
-      fill_in(:player2, with: 'Robert')
-      click_button('Enter Battle')
+      sign_up_and_play
       expect(page).to have_content('Robert')
     end
   end
 
   feature 'HP' do
     scenario 'allows player to view opponent HP' do
-      visit "http://localhost:9292/"
-      fill_in(:player1, with: 'Tony')
-      fill_in(:player2, with: 'Robert')
-      click_button('Enter Battle')
+      sign_up_and_play
       expect(page).to have_content('Robert: 100/100HP')
     end
   end
