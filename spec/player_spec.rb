@@ -16,9 +16,7 @@ describe Player do
     scenario 'returns player hp' do
       expect(tony.hp).to eq described_class::DEFAULT_HP
     end
-  end
 
-  feature '#attack' do
     scenario 'it reduces opponents HP when attacked' do
       expect{tony.receive_damage}.to change{tony.hp}.by(-10)
     end
