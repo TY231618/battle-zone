@@ -1,5 +1,5 @@
 require 'capybara'
-require_relative '../app.rb'
+require_relative '../app/app.rb'
 
 
   feature 'HP' do

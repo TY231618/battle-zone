@@ -1,8 +1,8 @@
 require 'capybara'
-require_relative '../app.rb'
+require_relative '../app/app.rb'
 
 describe BattleZone do
-  
+
   include Capybara::DSL
   Capybara.default_driver = :selenium
 
