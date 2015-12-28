@@ -7,6 +7,8 @@ require 'capybara/rspec'
 require 'rspec'
 require 'web_helper'
 
+include Capybara::DSL
+Capybara.default_driver = :selenium
 
 Capybara.app = BattleZone
 

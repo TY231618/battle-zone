@@ -1,9 +1,9 @@
 <h2>Fight to the Death</h2>
-<%= @player1 %>: 100/100HP
+<%= @player1 %>: <%= @player1_hp %>/100HP
 <br>
 VS
 <br>
-<%= @player2 %>: 100/100HP
+<%= @player2 %>: <%= @player2_hp %>/100HP
 
 <form action="/attack">
   <input type="submit" value="Attack"/>

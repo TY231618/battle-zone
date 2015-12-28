@@ -3,9 +3,6 @@ require_relative '../app/app.rb'
 
 describe BattleZone do
 
-  include Capybara::DSL
-  Capybara.default_driver = :selenium
-
   feature 'when starting a game' do
     scenario 'you see a welcome page' do
       visit "http://localhost:9292/"
